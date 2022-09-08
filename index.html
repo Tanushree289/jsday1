@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1</title>
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+<body>
+
+<br>
+<h1>Day1</h1>
+
+
+   <br><h3>
+    Difference between “ == “ and “ === “ operators.
+    <br>
+    </h3>
+    <pre>
+ Double equals (==) is a comparison operator, which transforms the operands having the same type before comparison.
+
+So, when you compare string with a number, JavaScript converts any string to a number. An empty string is always converts to zero. A string with no numeric value is converts to NaN (Not a Number), which returns false.
+
+=== (Triple equals) is a strict equality comparison operator in JavaScript, which returns false for the values which are not of a similar type. This operator performs type casting for equality. If we compare 2 with “2” using ===, then it will return a false value.
+
+    </pre>
+
+<br>
+<hr>
+<h3>What is the spread operator?</h3>
+<br>
+<pre>
+The spread operator is a new addition to the set of operators in JavaScript ES6. It takes in an iterable (e.g an array) and expands it into individual elements.
+
+The spread operator is commonly used to make shallow copies of JS objects. Using this operator makes the code concise and enhances its readability.
+
+The spread operator ... is used to expand or spread an iterable or an array. For example,
+
+const arrValue = ['My', 'name', 'is', 'Jack'];
+
+console.log(arrValue);   // ["My", "name", "is", "Jack"]
+console.log(...arrValue); // My name is Jack
+
+</pre>
+<br>
+<hr>
+<h3>  What are the differences between var, let and const?  </h3>
+<br>
+
+<pre>
+
+    let: The let keyword declares a block-scoped local variable, optionally initializing it to a value.
+    Block-scoped means that the variable is only available within the block it was declared in, which is usually denoted by curly braces {}.
+    
+    var: The var keyword declares a function-scoped or global variable, optionally initializing it to a value.
+    Function-scoped means that the variable is only available within the function it was declared in. Global variables are available throughout your entire code.
+    
+    const: The const keyword declares a block-scoped, immutable constant variable, i.e. a variable that can’t be reassigned.
+    Constants are also called “immutable variables”, but that’s a bit of a misnomer since they are actually variables – just ones that can’t be reassigned.
+    
+
+</pre>
+
+
+
+<br>
+<hr>
+<h3>  What is execution context   </h3>
+<br>
+
+<pre>
+    Execution context is something that you need to know to understand how JavaScript code runs. First of all, it is an abstract concept that represents the environment in which JavaScript runs. What happens inside the execution context is two things basically. The first is parsing the code line by line and the second is storing the variables and functions into the memory. In simple terms, it has two types:
+
+Global Execution Context
+Local Execution Context
+Global Execution Context is the first thing that is created when you write JavaScript code. It is the default context.
+
+Local Execution Context is created when you call a function (not defining a function).
+</pre>
+
+
+
+
+<br>
+<hr>
+<pre>
+    Creation Phase
+
+    Compiler runs through the entire code for 2 time before actually executing the code,
+    
+    In the first run, It picks all function declarations and stores them in memory with their reference.
+    In the second run, It picks all variables and assign undefined to them. In the event of a conflict between variable and function declaration name then that variable is ignored.
+    Execution Phase
+    
+    Variables assigned with values
+    Functions executed
+    With above formula, I’ve arrived at a pictorial representation of the above code execution,
+    
+
+    
+
+
+
+</pre>
+<br>
+
+<hr>
+<h3>  What is meant by first class functions  </h3>
+
+<br>
+
+<pre>
+    First-class Function
+    A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
+    
+    Examples
+    Assigning a function to a variable
+    const foo = () => {
+      console.log("foobar");
+    }
+    foo(); // Invoke it using the variable
+    // foobar
+    Passing a function as an argument
+    function sayHello() {
+      return "Hello, ";
+    }
+    function greeting(helloMessage, name) {
+      console.log(helloMessage() + name);
+    }
+    // Pass `sayHello` as an argument to `greeting` function
+    greeting(sayHello, "JavaScript!");
+    // Hello, JavaScript!
+    Returning a function
+    function sayHello() {
+      return () => {
+        console.log("Hello!");
+      }
+    }
+    Copy to Clipboard
+    In this ex
+    
+
+
+
+
+
+
+
+
+</pre>
+
+
+<br>
+<hr>
+
+<br>
+<h3>  What are closures? Give an example of closure </h3>
+
+<hr>
+<br>
+<pre>
+
+    A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+
+function makeFunc() {
+  const name = 'Mozilla';
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+</pre>
+
+<br>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
